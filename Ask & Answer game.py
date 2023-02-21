@@ -4,9 +4,12 @@ while True:
     keep_asking= True
     while keep_asking==True:
         try:
-            a = int(input("Enter a number: "))
+            numb_a = int(input("Enter a number: "))
 
-            b = int(input("Enter a second number: "))
+            numb_b = int(input("Enter a second number: "))
+
+            oper= str(input("Multiplication, Division, Minus, Plus, Squared or Square root of?")
+
             keep_asking=False
         except ValueError:
             print("Not a valid number, please try again")
@@ -14,11 +17,4 @@ while True:
 
     print(f"You entered {a} and {b}")
 
-    if a>b:
-        print(f"the greater number is {a}")
-    elif b>a:
-        print(f"the greater number is {b}")
-    else:
-        print(f"Neither number is greater. They are both equal {a}={b}")
 
-    print(f"the sum of the two number is: {a+b}")
