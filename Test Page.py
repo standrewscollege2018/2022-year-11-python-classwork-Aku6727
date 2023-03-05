@@ -1,62 +1,22 @@
-''' Making a Virtual Assistant'''
-while True:
-    keep_asking=True
+# Program to display the Fibonacci sequence up to n-th term
+print("hi ")
+nterms = int(input("How many terms? "))
 
-    while keep_asking==True:
-        try:
-            answer1=str(input("Can I help you with calculating something? Please answer yes or no:   "))
-
-            if answer1=="yes":
-                ask_again_1=True
-
-                while ask_again_1==True:
-                    try:
-
-                        numb_1=int(input("Give me the first Number or the Base number: "))
-
-                        numb_2=int(input("Give me the second Number or the exponent: "))
-
-                        ask_again_1=False
-
-                        ask_again=True
-                    except ValueError:
-                        print("Please try again")
-
-                        ask_again=True
-
-                while ask_again==True:
-                    try:
-                        Operation=(input("would you like to +,-,*,/ or any power (**):  "))
-                        if Operation=="+":
-                            print(f"Ok. {numb_1}+{numb_2}={numb_1+numb_2}")
-                        elif Operation=="-":
-                            print(f"Ok. {numb_1}-{numb_2}={numb_1-numb_2}")
-                        elif Operation=="*":
-                            print(f"Ok. {numb_1}*{numb_2}={numb_1*numb_2}")
-                        elif Operation=="/":
-                            print(f"Ok. {numb_1}/{numb_2}={numb_1/numb_2}")
-                        elif Operation[0:2]=="**":
-                            print(f"Ok.{numb_1}**{numb_2}={numb_1**numb_2}")
-                        else:
-                            print(f"{Operation} is not a valid response. Please enter a different response")
-
-                        ask_again=False
-
-                    except ValueError:
-                        print(f"I didn't understand that, please answer again.")
+# first two terms
+n1, n2 = 0, 1
+count = 0
 
 
+if nterms <= 0:
+   print("Please enter a positive integer")
+# if there is only one term, return n1
+else:
+    print("Fibonacci sequence:")
+    while count < nterms:
+        print(n1)
+        nth = n1 + n2
+        # update values
+        n1 = n2
+        n2 = nth
+        count += 1
 
-            elif answer1=="no":
-                print("Ok, I will go back to sleep.")
-
-            else:
-                print("Sorry I didnt understand that. Please try Again.")
-
-            keep_asking=False
-
-
-
-        except ValueError:
-            print("I didn't understand {answer1}, please answer again.")
-# Write your code here :-)
